@@ -1,6 +1,59 @@
+/* font-family: 'Roboto Mono', monospace;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Be Vietnam', sans-serif;
+font-family: 'Playfair Display SC', serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Montserrat Subrayada', sans-serif; */
+
 body{
     background: url('../images/background2.jpg');
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
    
 }
+
+#header{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    padding-left: 5%; 
+}
+
+#cali{
+    font-family: 'Playfair Display SC', serif;
+    font-size: 5.5em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main-container{
+    background:rgba(255, 255, 255, 0.8);
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 73%;
+    margin-left: 14%;
+    padding-top: 30%;
+    margin-bottom: 15%;
+
+}
+
+#startBtn{
+    width: 40%;
+    background-color: rgba(206, 62, 37);
+    border:none;
+    font-family: 'Be Vietnam', sans-serif;
+    margin-bottom: 3%;
+    margin-top: 0;
+    /* padding: 20px 50px; */
+    font-size: 2em;
+}
+
+#startBtn:hover{
+    background-color: rgb(196, 83, 63);
+    border:none;
+}
+
+
