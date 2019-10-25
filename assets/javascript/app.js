@@ -96,7 +96,7 @@ $(document).ready(function () {
         },
 
         {
-            questions: "Which is the highest point of elevation in California?",
+            question: "Which is the highest point of elevation in California?",
             options: [
                 "Mount Saint Helena",
                 "Mount Shasta",
@@ -108,12 +108,12 @@ $(document).ready(function () {
 
         {
             question: "Who is the governor of Califonria (2019)?",
-            options: {
-                a: "Gavin Newsom",
-                b: "Chris Pratt",
-                c: "Arnold Schwarzenegger",
-                d: "Sylvester Stallone"
-            },
+            options: [
+                "Gavin Newsom",
+                "Chris Pratt",
+                "Arnold Schwarzenegger",
+                "Sylvester Stallone"
+            ],
             answer: "a",
         },
 
@@ -121,52 +121,47 @@ $(document).ready(function () {
 
 
     //Global Variables
-    var start;
     var currentQuestion = 0;
     var time;
     var userGuess;
     var timer = 20;
-    var correctAnswer = 0;
-    var incorrectAnswer = 0;
+    var correct = 0;
+    var incorrect = 0;
     var unanswered = 0;
     var rightAnswer;
     var test;
-    var test2;
-    var test3 = 0;
+    var currentQuestion= 0; 
 
 
     // Add in images/gifs in an array 
     //to make them easy to call on
     var images = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10"];
-    //Add in messages for the following "Correct" or "Incorrect" or "Ran out of time"
-    //Possibly take out and make then conditionals??
-    var messages = {
-        correct: "Yes, you got it right!",
-        incorrect: "No, that's not correct.",
-        outOfTime: "You ran out of time for this question!"
-    }
+
+    // var messages = {
+    //     correct: "Yes, you got it right!",
+    //     incorrect: "No, that's not correct.",
+    //     outOfTime: "You ran out of time for this question!"
+    // }
+    
     //Users click on start button to start the game
     $("#startBtn").on("click", function () {
         //somehow hide the start button from following pages
-        $(this).hide;
-        nextQuestion();
+        $(this).hide();
+        startGame();
         //add a function new game to start the game
         //add the timer to start the timer
-        countDown();
+        $("#timeLeft").html("Time Remaining: " + 20);
     })
     //Use jQuery to restart the game
     $("#startOver").on("click", function () {
-        $(this).hide
-        nextQuestion();
+        $(this).hide();
+        startGame();
         //add a function for new game to start a new game
         //add the timer to start the timer here
-        countDown();
     })
     // function for user to click on an answer
     // Add in conditionals? to represent if the user gets the answer right or wrong
-    $("#options").on("click", function () {
-
-    })
+   
 
 
     //Start game
@@ -180,53 +175,65 @@ $(document).ready(function () {
         correctAnswer = 0;
         incorrectAnswer = 0;
         unanswered = 0;
-        currentQuestion = 0;
-        // ("#correctAnswers").empty();
-        // ("#incorrectAnsers").empty();
-        // ("#unanswered").empty();
-
-
         nextQuestion();
-
-
     }
-    startGame();
 
-
+    $(".options").on("click", answerDisplay);
 
     function nextQuestion() {
-        $(".question").append(myQuestions.question);
+        $(".question").html(myQuestions[currentQuestion].question);
+        $(".options").append(myQuestions[currentQuestion].options);
+        
+    }
 
-        for (var i = 0; i < 3; i++) {
-            $("#options").html(myQuestions.answer);
+    function answerDisplay(){
+        if(userGuess === myQuestions.answer){
+            correct++;
+            currentQuestion++;
+            //Show image
+            countDown();
+            $("#message").html("Yes, you got it right!" + "The answer is: " + myQuestions.answer[currentQuestion]);
+            
+        }else if (userGuess !== myQuestions.answer){
+            incorrect++;
+            currentQuestion++;
+            countDown();
+            $("#message").html("No, that's not correct." + "The answer is: " + myQuestions.answer[currentQuestion]);
+
+        }else {
+            unanswered++;
+            currentQuestion++;
+            countDown();
+            $("#message").html("You ran out of time for this question!" + "The answer is: " + myQuestions.answer[currentQuestion]);
         }
+        //add in a function for when the game ends
     }
 
-    //Which function takes us to the next page? 
-    //function for timer
+
+
     function countDown() {
-        clearInterval(test)
-        test = setInterval(countDownTimer, 1000)
+        clearInterval(test);
+        test = setInterval(countDownTimer, 1000);
     }
-
-    // function to show timer
-    // possibly add in additional conditionals
-    // to iterate if the player/user get the correct answer or not
 
     function countDownTimer() {
         timer--;
         $("#timeLeft").html("Time Remaining: " + timer);
-        if (timer === 0) {
-            clearInterval(test);
+            if (timer === 0) {
+               stop();
         }
     }
 
-    //
+    function stop(){
+        clearInterval(test);
+    }
+   countDown();
+    function scoreboard(){
+        $("#correctAnswers").html ("Correct Answers: " + correct);
+        $("#incorrectAnswers").html ("Incorrect Answers: " + incorrect);
+        $("#unanswered").html ("Unanswered: " + unanswered);
 
-
-
-
-
+    }
 
 
 
