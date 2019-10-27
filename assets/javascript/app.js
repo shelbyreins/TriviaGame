@@ -111,6 +111,11 @@ $(document).ready(function () {
     var unanswered = 0;
     var test;
 
+    $("#correctAnswers").hide();
+    $("#incorrectAnswers").hide();
+    $("#unanswered").hide();
+    $("#display").hide();
+
     //Add click to the start button
     $("#startBtn").on("click", function () {
         $(this).hide();
@@ -147,9 +152,10 @@ $(document).ready(function () {
         $("#correctAnswers").hide();
         $("#incorrectAnswers").hide();
         $("#unanswered").hide();
+        $("#display").hide();
     }
 
-    
+    //Displays the answers 
     function scoreBoard(){
         var checkAnswer;
         correct = 0;
@@ -173,6 +179,7 @@ $(document).ready(function () {
     $("#correctAnswers").show();
     $("#incorrectAnswers").show();
     $("#unanswered").show();
+    $("#display").show();
     $("#submitBtn").hide();
     $(".question").hide();
     $(".options").hide();

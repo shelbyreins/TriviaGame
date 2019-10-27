@@ -49,7 +49,7 @@ body{
     margin-top: 21%;
     padding: 20px 50px;
     font-size: 2.5em;
-    margin-bottom:0%;
+    margin-bottom:12%;
     letter-spacing: 3px;
     font-weight: bolder;
 }
@@ -102,22 +102,21 @@ input[type="radio"]{
     border:none;
 }
 
-/* #display{
+#display{
    width: 45%;
-   margin-left: 27%;
+   margin-left: 28%;
     background:rgba(255, 255, 255, 0.8);
     text-align: center;
     border-radius: 10px;
-   
-   padding-top: 30px;
-   padding-bottom: 25px;
-} */
+   padding-top: 20px;
+   padding-bottom: 30px;
+   font-size: 1.6em;
+   font-family: 'Times New Roman', Times, serif;
+   font-weight: bold;
+}
 
 
 #correctAnswers, #incorrectAnswers, #unanswered{
-    font-size: 1.5em;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    margin-top: 20px;
-    padding: 10px;
+    padding-top: 10px;
+    
 }
