@@ -17,7 +17,7 @@ https://shelbyreins.github.io/TriviaGame/
 - If you run out of time your score will automatically populate
 - Have fun!
 
-<img src = "#" width="400px"/>
+<img src = "assets/images/TriviaGame.gif" width="400px"/>
 
 ### Game Design Notes
 
@@ -27,13 +27,15 @@ https://shelbyreins.github.io/TriviaGame/
 
  ## Technologies Used
 
- - HTML
- - CSS
- - Git
- - Github
- - JavaScript
- - jQuery
- - setInterval
+- HTML
+- CSS
+- Git
+- Github
+- JavaScript
+- jQuery 
+- setInterval
 
     ### Code Snippet
+    This code illistrates the timer. 
+
     <img src = "assets/images/TimerSnippet.png" width= "400px"/>
