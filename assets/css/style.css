@@ -34,8 +34,8 @@ body{
     border-radius: 10px;
     margin-top: 20px;
     width: 80%;
-    margin-left: 14%;
-    padding-top: 5%;
+    margin-left: 10%;
+    /* padding-top: 5%; */
     margin-bottom: 15%;
 
 }
@@ -44,16 +44,20 @@ body{
     width: 40%;
     background-color:rgba(206, 62, 37);
     border: rgba(206, 62, 37);
+    border-radius: 10px;
     font-family: 'Be Vietnam', sans-serif;
-    margin-bottom: 3%;
-    margin-top: 0;
-    /* padding: 20px 50px; */
-    font-size: 2em;
+    margin-top: 21%;
+    padding: 20px 50px;
+    font-size: 2.5em;
+    margin-bottom:8%;
+    letter-spacing: 3px;
+    font-weight: bolder;
 }
 
 #startBtn:hover{
     background-color: rgb(196, 83, 63);
     border:none;
+   
 }
 
 #timeLeft{
@@ -61,7 +65,7 @@ body{
     font-family: 'Times New Roman', Times, serif;
     font-size: 2em;
     padding-bottom: 30px;
-    margin-top: 0;
+    padding-top: 40px;;
 }
 
 .questions{
@@ -74,12 +78,10 @@ body{
     /* letter-spacing: 2px; */
 
 }
-input.questions{
-    padding-left: 20px;
-}
 
 input[type="radio"]{
     margin-left: 10px;
+    color: black;
 }
 
 .submit{
@@ -87,21 +89,34 @@ input[type="radio"]{
     background-color: rgba(206, 62, 37);
     border: rgba(206, 62, 37);
     font-family: 'Be Vietnam', sans-serif;
-   
-    margin-top: 0;
     color: #ffffff;
-    font-size: 1em;
+    font-weight: bold;
+    font-size: 1.4em;
     border-radius: 10px;
     margin-top: 20px;
+    margin-bottom: 40px;
     padding: 10px;
 }
 
+.submit:hover{
+    background-color: rgb(196, 83, 63);
+    border:none;
+}
+
+#display{
+   width: 45%;
+   margin-left: 27%;
+    background:rgba(255, 255, 255, 0.8);
+    text-align: center;
+    border-radius: 10px;
+   padding-top: 0px;
+   padding-bottom: 25px;
+}
 
 
 #correctAnswers, #incorrectAnswers, #unanswered{
     font-size: 1.5em;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    padding-bottom: 10px;
-
+    padding-bottom: 10px
 }
