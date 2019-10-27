@@ -124,76 +124,56 @@ $(document).ready(function () {
     var rightAnswer;
     var test;
    
-
-
-    //var images = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10"];
-
+//Add click to the start button
     $("#startBtn").on("click", function () {
         $(this).hide();
-        startGame();
         countDown();
         $("#timeLeft").html("Time Remaining: " + 20);
-    })
-    
-    $("#startOver").on("click", function () {
-        $(this).hide();
         startGame();
-        countDown();
     })
-    // $(".options").on("click", function(){
-       
-    //     //$(this).hide;
-        
-    // })
 
+    $("doneBtn").on("click", function() {
+
+    })
     
+//Display question
+function startGame(){
+    var output = [];
 
-    function startGame() {
-        correctAnswer = 0;
-        incorrectAnswer = 0;
-        unanswered = 0;
-        nextQuestion();
+    for (var i = 0; i < questions.length; i++){
+        $(".question").append(myQuestions[i].question);
+      
+        
+       
+    
+    // for(var k = 0; k < myQuestions.length; k++){
+    //     $(".options").html(myQuestions[k].options)
+    //     }
     }
 
-    
 
-    function nextQuestion() {
-        $(".question").html(myQuestions[currentQuestion].question);
-        for (var i = 0; i < 3; i++){
-            $(".options").append(myQuestions[currentQuestion].options[i]);
-        }
-        countDown();
-        $(".options").on("click", function(){
-        answerDisplay();
-        stop();
-        })
-    
 
     function answerDisplay(){
         if(userGuess === myQuestions.answer){
             correct++;
-            currentQuestion++;
-            //Show image
             stop();
-            //$("#message").html("Yes, that's not correct." + "The answer is: " + myQuestions.answer[currentQuestion]);
+            $("#message").html("Yes, that's not correct." + "The answer is: " + myQuestions.answer[currentQuestion]);
            
             
         }else if (userGuess !== myQuestions.answer){
             incorrect++;
-            currentQuestion++;
             stop();
             //$("#message").html("No, that's not correct." + "The answer is: " + myQuestions.answer[currentQuestion]);
 
         }else {
             unanswered++;
-            currentQuestion++;
             stop();
-            //$("#message").html("You ran out of time for this question!" + "The answer is: " + myQuestions.answer[currentQuestion]);
+            $("#message").html("You ran out of time for this question!" + "The answer is: " + myQuestions.answer[currentQuestion]);
         }
     }
 
 
-
+//Timer
     function countDown() {
         clearInterval(test);
         test = setInterval(countDownTimer, 1000);
@@ -212,26 +192,107 @@ $(document).ready(function () {
         clearInterval(test);
     }
   
-    function lastQuestion(){
-        if (currentQuestion === myQuestion.length){
-            ("#timeLeft").hide();
-            scoreBoard();
-            $("#startBtn").on("click", function () {
-            $(this).hide();
-            startGame();
-            countDown();
-            $("#timeLeft").html("Time Remaining: " + 20);
-            })
+
+    //***************************************************
+    //var images = ["question1", "question2", "question3", "question4", "question5", "question6", "question7", "question8", "question9", "question10"];
+
+    // $("#startBtn").on("click", function () {
+    //     $(this).hide();
+    //     startGame();
+    //     countDown();
+    //     $("#timeLeft").html("Time Remaining: " + 20);
+    // })
+    
+    // $("#startOver").on("click", function () {
+    //     $(this).hide();
+    //     startGame();
+    //     countDown();
+    // })
+
+    // function startGame() {
+    //     correctAnswer = 0;
+    //     incorrectAnswer = 0;
+    //     unanswered = 0;
+    //     nextQuestion();
+    // }
+
+    
+
+    // function nextQuestion() {
+    //     $(".question").html(myQuestions[currentQuestion].question);
+    //     for (var i = 0; i < 3; i++){
+    //         $(".options").append(myQuestions[currentQuestion].options[i]);
+    //     }
+    //     countDown();
+    //     $(".options").on("click", function(){
+    //     answerDisplay();
+    //     stop();
+    //     })
+    
+
+    // function answerDisplay(){
+    //     if(userGuess === myQuestions.answer){
+    //         correct++;
+    //         currentQuestion++;
+    //         //Show image
+    //         stop();
+    //         //$("#message").html("Yes, that's not correct." + "The answer is: " + myQuestions.answer[currentQuestion]);
+           
+            
+    //     }else if (userGuess !== myQuestions.answer){
+    //         incorrect++;
+    //         currentQuestion++;
+    //         stop();
+    //         //$("#message").html("No, that's not correct." + "The answer is: " + myQuestions.answer[currentQuestion]);
+
+    //     }else {
+    //         unanswered++;
+    //         currentQuestion++;
+    //         stop();
+    //         //$("#message").html("You ran out of time for this question!" + "The answer is: " + myQuestions.answer[currentQuestion]);
+    //     }
+    // }
 
 
-        }
-    }
-    function scoreBoard(){
-        $("#correctAnswers").html ("Correct Answers: " + correct);
-        $("#incorrectAnswers").html ("Incorrect Answers: " + incorrect);
-        $("#unanswered").html ("Unanswered: " + unanswered);
 
-    }
+    // function countDown() {
+    //     clearInterval(test);
+    //     test = setInterval(countDownTimer, 1000);
+    // }
+
+    // function countDownTimer() {
+    //     timer--;
+    //     $("#timeLeft").html("Time Remaining: " + timer);
+    //         if (timer === 0) {
+    //            stop();
+    //            //answerDisplay();
+    //     }
+    // }
+
+    // function stop(){
+    //     clearInterval(test);
+    // }
+  
+    // function lastQuestion(){
+    //     if (currentQuestion === myQuestion.length){
+    //         ("#timeLeft").hide();
+    //         scoreBoard();
+    //         $("#startBtn").on("click", function () {
+    //         $(this).hide();
+    //         startGame();
+    //         countDown();
+    //         $("#timeLeft").html("Time Remaining: " + 20);
+    //         })
+
+
+    //     }
+    // }
+    // function scoreBoard(){
+    //     $("#correctAnswers").html ("Correct Answers: " + correct);
+    //     $("#incorrectAnswers").html ("Incorrect Answers: " + incorrect);
+    //     $("#unanswered").html ("Unanswered: " + unanswered);
+
+    // }
 
 
 
