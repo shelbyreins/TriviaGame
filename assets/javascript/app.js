@@ -132,8 +132,7 @@ $(document).ready(function () {
     function startGame() {
         var holder = "";
         var output = [];
-
- 
+        
         for (var i = 0; i < myQuestions.length; i++) {
             holder += '<div class="questions" id="q" + i >' + myQuestions[i].question + "<br>";
             output = myQuestions[i].options;
@@ -149,6 +148,7 @@ $(document).ready(function () {
         }
         holder = '<button class="submit">Submit</button>'
         $("#submitBtn").html(holder);
+
         $("#correctAnswers").hide();
         $("#incorrectAnswers").hide();
         $("#unanswered").hide();
