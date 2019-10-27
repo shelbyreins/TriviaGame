@@ -1,6 +1,6 @@
 # TriviaGame
 
-I built a trivia game built using JavaScript and jQuery. The instructions are below along with a GIF. 
+I built a trivia game using JavaScript and jQuery. The instructions are below along with a GIF. 
 
 ## Live Link
 
@@ -22,10 +22,11 @@ https://shelbyreins.github.io/TriviaGame/
 ### Game Design Notes
 
 - User will have limited time to complete the quiz
-- User will only can only select one answer per question
+- User can only select one answer per question
 - Must contian a count down timer
 
  ## Technologies Used
+
  - HTML
  - CSS
  - Git
@@ -34,5 +35,5 @@ https://shelbyreins.github.io/TriviaGame/
  - jQuery
  - setInterval
 
-    #### Code 
+    ### Code Snippet
     <img src = "assets/images/TimerSnippet.png" width= "400px"/>
