@@ -7,7 +7,7 @@ I built a trivia game using JavaScript and jQuery. The instructions are below al
 https://shelbyreins.github.io/TriviaGame/
 
 
-## Description on how to use
+## Description on how to use:
 
 - Press the start button
 - You will be given 10 questions with 3 answers
@@ -17,7 +17,7 @@ https://shelbyreins.github.io/TriviaGame/
 - If you run out of time your score will automatically populate
 - Have fun!
 
-<img src = "assets/images/TriviaGame.gif" width="400px"/>
+    <img src = "assets/images/TriviaGame.gif" width="600px"/>
 
 ### Game Design Notes
 
@@ -36,6 +36,6 @@ https://shelbyreins.github.io/TriviaGame/
 - setInterval
 
     ### Code Snippet
-    This code illistrates the timer. 
+    This code illistrates the timer. The timer goes down by one second at a time for a total of 60 seconds. If the timer reaches zero seconds, the timer will stop and go populate the players score. 
 
     <img src = "assets/images/TimerSnippet.png" width= "400px"/>
