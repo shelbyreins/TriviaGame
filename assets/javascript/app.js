@@ -2,12 +2,11 @@ $(document).ready(function () {
 
     var myQuestions = [
         {
-            question: "What is the capital of Califonia?",
+            question: "What is the capital of California?",
             options: [
                 "San Francisco",
                 "Sacramento",
                 "Monterey",
-                "San Diego",
             ],
             answer: 1,
         },
@@ -18,7 +17,6 @@ $(document).ready(function () {
                 "Golden Poppy",
                 "Camellia",
                 "Orange-blossom",
-                "Forget-me-not",
             ],
             answer: 0,
         },
@@ -29,49 +27,44 @@ $(document).ready(function () {
                 "1925",
                 "1850",
                 "1805",
-                "1825"
             ],
             answer: 1,
         },
 
         {
-            question: "What is Califonria's state bird?",
+            question: "What is California's state bird?",
             options: [
                 "Bald Eagle",
-                "Finch",
                 "Quail",
                 "Seagull",
             ],
-            answer: 2,
+            answer: 1,
         },
 
         {
             question: "Which state boarders California to the north?",
             options: [
-                "Oregon",
                 "Montana",
                 "Washington",
-                "Nevada",
+                "Oregon",
             ],
-            answer: 0,
+            answer: 2,
         },
 
         {
             question: "What coast is California on?",
             options: [
-                "East",
                 "North",
                 "South",
                 "West",
             ],
-            answer: 3,
+            answer: 2,
         },
 
         {
             question: "What is California's state nickname?",
             options: [
                 "The Golden state",
-                "The Sunshine state",
                 "The Hoosier state",
                 "The Bay state",
             ],
@@ -81,34 +74,31 @@ $(document).ready(function () {
         {
             question: "How many miles long is the state of California?",
             options: [
-                "432 miles",
                 "1000 miles",
                 "770 miles",
                 "890 miles",
             ],
-            answer: 2,
+            answer: 1,
         },
 
         {
             question: "Which is the highest point of elevation in California?",
             options: [
-                "Mount Saint Helena",
                 "Mount Shasta",
                 "Mount Diablo",
                 "Mount Whitney",
             ],
-            answer: 3,
+            answer: 2,
         },
 
         {
-            question: "Who is the governor of Califonria (2019)?",
+            question: "Who is the governor of California (2019)?",
             options: [
                 "Gavin Newsom",
                 "Chris Pratt",
                 "Arnold Schwarzenegger",
-                "Sylvester Stallone"
             ],
-            answer: 1,
+            answer: 0,
         },
 
     ];
@@ -145,7 +135,7 @@ $(document).ready(function () {
    
             for (var k = 0; k < output.length; k++) {
 
-                holder += '<input  type="radio" class="i' + i + '" name = "' + i + '" value="' + k +'">' + output[k] +'</input>'
+                holder += '<input type="radio" class="i' + i + '" name = "' + i + '" value="' + k +'">' + output[k] +'</input>'
                 
             }
             holder += '</div>';           
@@ -154,6 +144,9 @@ $(document).ready(function () {
         }
         holder = '<button class="submit">Submit</button>'
         $("#submitBtn").html(holder);
+        $("#correctAnswers").hide();
+        $("#incorrectAnswers").hide();
+        $("#unanswered").hide();
     }
 
     
@@ -174,14 +167,17 @@ $(document).ready(function () {
             incorrect++;
         }
     }
-
     $("#correctAnswers").html ("Correct Answers: " + correct);
     $("#incorrectAnswers").html ("Incorrect Answers: " + incorrect);
     $("#unanswered").html ("Unanswered: " + unanswered);
+    $("#correctAnswers").show();
+    $("#incorrectAnswers").show();
+    $("#unanswered").show();
     $("#submitBtn").hide();
     $(".question").hide();
     $(".options").hide();
     $("#timeLeft").hide(); stop();
+    
 }
 
     //Timer
@@ -203,11 +199,6 @@ $(document).ready(function () {
         clearInterval(test);
     }
 });
-
-
-
-
-
 
 
 
