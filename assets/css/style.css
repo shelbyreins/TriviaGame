@@ -33,17 +33,17 @@ body{
     text-align: center;
     border-radius: 10px;
     margin-top: 20px;
-    width: 73%;
+    width: 80%;
     margin-left: 14%;
-    padding-top: 30%;
+    padding-top: 5%;
     margin-bottom: 15%;
 
 }
 
 #startBtn{
     width: 40%;
-    background-color: rgba(206, 62, 37);
-    border:none;
+    background-color:rgba(206, 62, 37);
+    border: rgba(206, 62, 37);
     font-family: 'Be Vietnam', sans-serif;
     margin-bottom: 3%;
     margin-top: 0;
@@ -56,6 +56,52 @@ body{
     border:none;
 }
 
-.question{
+#timeLeft{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    padding-bottom: 30px;
+    margin-top: 0;
+}
+
+.questions{
+    font-size: 1.3em;
+    font-family: 'Roboto Mono', monospace;
     padding-bottom: 20px;
+    font-weight: bold;
+    /* line-height: 100%; */
+    /* word-spacing: 10px; */
+    /* letter-spacing: 2px; */
+
+}
+input.questions{
+    padding-left: 20px;
+}
+
+input[type="radio"]{
+    margin-left: 10px;
+}
+
+.submit{
+    width: 15%;
+    background-color: rgba(206, 62, 37);
+    border: rgba(206, 62, 37);
+    font-family: 'Be Vietnam', sans-serif;
+   
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1em;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+
+
+#correctAnswers, #incorrectAnswers, #unanswered{
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding-bottom: 10px;
+
 }
