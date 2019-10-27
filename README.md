@@ -32,10 +32,10 @@ https://shelbyreins.github.io/TriviaGame/
 - Git
 - Github
 - JavaScript
-- jQuery 
+- jQuery
 - setInterval
 
     ### Code Snippet
-    This code illistrates the timer. The timer goes down by one second at a time for a total of 60 seconds. If the timer reaches zero seconds, the timer will stop and go populate the players score. 
+    This code illistrates the timer. The timer goes down by one second at a time for a total of 60 seconds. If the timer reaches zero seconds, the timer will stop and populate the players score. 
 
     <img src = "assets/images/TimerSnippet.png" width= "400px"/>
